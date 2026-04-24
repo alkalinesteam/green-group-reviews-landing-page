@@ -1,0 +1,720 @@
+<style>
+.gg-team-page {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #1c1917;
+  --muted: #57534e;
+  --line: #e7e5e4;
+  --green: #047857;
+  --green-dark: #064e3b;
+  --green-soft: #ecfdf5;
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.08);
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --max: 1180px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+  padding-bottom: 72px;
+}
+
+.gg-team-page *,
+.gg-team-page *::before,
+.gg-team-page *::after {
+  box-sizing: border-box;
+}
+
+.gg-team-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.gg-team-page img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.gg-team-page .container {
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.gg-team-page .hero {
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 56%, #f5f5f4 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.gg-team-page .hero-inner {
+  padding: 56px 0 48px;
+}
+
+.gg-team-page .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #a7f3d0;
+  background: var(--green-soft);
+  color: var(--green);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.gg-team-page .hero-grid {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.gg-team-page h1 {
+  margin: 0;
+  max-width: 720px;
+  font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.gg-team-page h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.gg-team-page .hero-copy {
+  max-width: 640px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.gg-team-page .hero-copy-strong {
+  margin-top: 14px;
+  font-weight: 700;
+  color: #2f3a35;
+}
+
+.gg-team-page .stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.gg-team-page .stat-pill {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.9);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #44403c;
+  box-shadow: var(--shadow-sm);
+}
+
+.gg-team-page .trust-note {
+  margin-top: 14px;
+  max-width: 660px;
+  font-size: 13px;
+  color: #78716c;
+}
+
+.gg-team-page .team-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 18px;
+}
+
+.gg-team-page .team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.gg-team-page .member-card {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafaf9 100%);
+  overflow: hidden;
+}
+
+.gg-team-page .member-photo {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #e7e5e4;
+}
+
+.gg-team-page .member-body {
+  padding: 16px;
+}
+
+.gg-team-page .member-name {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+.gg-team-page .member-location {
+  display: inline-flex;
+  margin-top: 8px;
+  background: var(--green-soft);
+  color: var(--green);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gg-team-page .member-copy {
+  margin-top: 12px;
+  color: #44403c;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.gg-team-page .button-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.gg-team-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 13px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gg-team-page .btn:hover {
+  transform: translateY(-1px);
+}
+
+.gg-team-page .btn-primary {
+  background: var(--green);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.gg-team-page .btn-secondary {
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid #d6d3d1;
+  box-shadow: var(--shadow-sm);
+}
+
+.gg-team-page .section {
+  padding: 52px 0 0;
+}
+
+.gg-team-page .section-intro {
+  max-width: 760px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.gg-team-page .route-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.gg-team-page .route-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow-sm);
+  padding: 22px;
+}
+
+.gg-team-page .route-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+.gg-team-page .route-copy {
+  margin-top: 8px;
+  color: #44403c;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.gg-team-page .reviews-wrap {
+  margin-top: 34px;
+}
+
+.gg-team-page .featured-review {
+  display: grid;
+  grid-template-columns: 0.98fr 1.02fr;
+  gap: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+}
+
+.gg-team-page .review-art {
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  padding: 20px;
+}
+
+.gg-team-page .review-card {
+  height: 100%;
+  border: 1px solid #d6d3d1;
+  border-radius: 22px;
+  background: #ffffff;
+  padding: 24px;
+}
+
+.gg-team-page .review-date {
+  font-size: 14px;
+  font-weight: 700;
+  color: #78716c;
+}
+
+.gg-team-page .review-service {
+  margin-top: 12px;
+  font-size: 1.38rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  line-height: 1.15;
+}
+
+.gg-team-page .review-name {
+  margin-top: 12px;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.gg-team-page .review-stars {
+  margin-top: 12px;
+  color: var(--green);
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+.gg-team-page .review-quote {
+  margin-top: 14px;
+  color: #44403c;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.gg-team-page .featured-copy {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gg-team-page .label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #78716c;
+}
+
+.gg-team-page .label.green {
+  color: var(--green);
+}
+
+.gg-team-page .featured-quote {
+  margin-top: 16px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #44403c;
+}
+
+.gg-team-page .featured-name {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #78716c;
+}
+
+.gg-team-page .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.gg-team-page .mini-review {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+}
+
+.gg-team-page .mini-review .review-card {
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+  background: #f8f8f7;
+  padding: 18px;
+}
+
+/* Hassan section, softened so it reads as part of the page, not a boxed widget */
+.gg-team-page .hassan-sell {
+  margin-top: 56px;
+  padding: 48px 0 8px;
+  background: transparent;
+  border-top: 1px solid var(--line);
+}
+
+.gg-team-page .hassan-sell-inner {
+  max-width: 980px;
+}
+
+.gg-team-page .sell-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.gg-team-page .sell-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.gg-team-page .sell-card-title {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+.gg-team-page .sell-card-copy {
+  margin-top: 8px;
+  color: #44403c;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.gg-team-page .dual-cta {
+  margin-top: 36px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faf9 100%);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  box-shadow: var(--shadow-sm);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.gg-team-page .dual-cta-text {
+  max-width: 760px;
+  margin: 0 auto 16px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.gg-team-page .cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gg-team-page .footer-cta {
+  margin-top: 48px;
+  padding: 38px 30px;
+  border-radius: 30px;
+  background: var(--green-dark);
+  color: #ffffff;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.gg-team-page .footer-cta h2 {
+  color: #ffffff;
+}
+
+.gg-team-page .footer-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.gg-team-page .footer-copy {
+  margin-top: 14px;
+  max-width: 720px;
+  color: #d1fae5;
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+.gg-team-page .footer-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.gg-team-page .footer-cta .btn-primary {
+  background: #ffffff;
+  color: var(--green-dark);
+}
+
+.gg-team-page .footer-cta .btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+@media (max-width: 1024px) {
+  .gg-team-page .hero-grid,
+  .gg-team-page .featured-review,
+  .gg-team-page .reviews-grid,
+  .gg-team-page .route-grid,
+  .gg-team-page .sell-grid,
+  .gg-team-page .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .gg-team-page .container {
+    width: min(var(--max), calc(100% - 20px));
+  }
+
+  .gg-team-page .hero-inner {
+    padding: 44px 0 40px;
+  }
+
+  .gg-team-page .team-grid,
+  .gg-team-page .cta-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gg-team-page .team-grid {
+    display: grid;
+  }
+
+  .gg-team-page .btn {
+    width: 100%;
+  }
+
+  .gg-team-page .featured-copy {
+    padding: 26px 22px;
+  }
+
+  .gg-team-page .hassan-sell {
+    margin-top: 44px;
+    padding-top: 40px;
+  }
+}
+</style>
+
+<div class="gg-team-page">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="eyebrow">The Green Group, Memphis and Baltimore home services</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Book the right person for the right city, direct or through TaskRabbit.</h1>
+          <p class="hero-copy">
+            Need help in Memphis or Baltimore? This page makes the decision easy. Book Micki (Kalanit) for Memphis jobs, Hassan for Baltimore jobs, and choose direct contact or TaskRabbit based on what feels most comfortable.
+          </p>
+          <p class="hero-copy hero-copy-strong">
+            Clear communication, capable hands, and a booking path that feels easy from the start.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-pill">Memphis, Micki (Kalanit)</div>
+            <div class="stat-pill">Baltimore, Hassan</div>
+            <div class="stat-pill">Direct booking or TaskRabbit</div>
+            <div class="stat-pill">Real customer proof where available</div>
+          </div>
+
+          <p class="trust-note">
+            Micki’s TaskRabbit reviews appear under her legal first name, Kalanit. Those real reviews below show completed-job feedback and help set the tone for the work customers can expect from The Green Group.
+          </p>
+        </div>
+
+        <div class="team-panel">
+          <div class="team-grid">
+            <div class="member-card">
+              <img class="member-photo" src="YOUR_KALANIT_PROFILE_PHOTO_URL" alt="Micki Kalanit profile photo" />
+              <div class="member-body">
+                <div class="member-name">Micki (Kalanit)</div>
+                <div class="member-location">Memphis</div>
+                <div class="member-copy">Repairs, installs, problem-solving jobs, and direct help for Memphis homeowners who want clear communication and solid work.</div>
+                <div class="button-stack">
+                  <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'team_page_kalanit_text'});}">Text Micki</a>
+                  <a href="https://tr.co/kalanit-c?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_kalanit_tr'});}">Book Kalanit on TaskRabbit</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <img class="member-photo" src="YOUR_HASSAN_PROFILE_PHOTO_URL" alt="Hassan profile photo" />
+              <div class="member-body">
+                <div class="member-name">Hassan</div>
+                <div class="member-location">Baltimore</div>
+                <div class="member-copy">Baltimore field help for homeowners who want a capable, no-nonsense pro for repairs, mounting, electrical, punch lists, and hands-on jobs.</div>
+                <div class="button-stack">
+                  <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'team_page_hassan_text'});}">Text for Baltimore jobs</a>
+                  <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_hassan_tr'});}">Book Hassan on TaskRabbit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Choose the path that matches your city</h2>
+      <p class="section-intro">
+        Keep it simple. Memphis customers should start with Micki. Baltimore customers should start with Hassan. If you already know you prefer TaskRabbit, both profiles are linked throughout the page.
+      </p>
+
+      <div class="route-grid">
+        <div class="route-card">
+          <div class="route-title">For Memphis jobs</div>
+          <div class="route-copy">Installations, repairs, smart home work, punch lists, and the kind of small but important jobs homeowners want handled right the first time.</div>
+        </div>
+        <div class="route-card">
+          <div class="route-title">For Baltimore jobs</div>
+          <div class="route-copy">Hands-on home repair, electrical help, mounting, flooring, carpentry, and practical problem-solving from someone who knows how to get straight to the issue.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>What customers say about Micki (Kalanit)’s work</h2>
+      <p class="section-intro">
+        These are real customer reviews from completed jobs. They help set the tone for the kind of communication, reliability, and follow-through The Green Group brings to the work.
+      </p>
+
+      <div class="reviews-wrap">
+        <article class="featured-review">
+          <div class="review-art">
+            <div class="review-card">
+              <div class="review-date">Mar 20, 2026</div>
+              <div class="review-service">Plumbing Help</div>
+              <div class="review-name">Marcus T.</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-quote">“I hired Kalanit to install a new kitchen faucet, repair a dishwasher drain hose, and install new lighting in my closet. She was efficient, knowledgeable, and great to work with. I look forward to working with her again.”</div>
+            </div>
+          </div>
+          <div class="featured-copy">
+            <div class="label green">Featured real customer review</div>
+            <div class="review-service" style="margin-top:10px; font-size:1.05rem;">Plumbing help</div>
+            <div class="featured-quote">“I hired Kalanit to install a new kitchen faucet, repair a dishwasher drain hose, and install new lighting in my closet. She was efficient, knowledgeable, and great to work with. I look forward to working with her again.”</div>
+            <div class="featured-name">Marcus T.</div>
+          </div>
+        </article>
+
+        <div class="reviews-grid">
+          <article class="mini-review">
+            <div class="review-card">
+              <div class="review-date">Feb 3, 2026</div>
+              <div class="review-service">Electrical Help</div>
+              <div class="review-name">Danielle R.</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-quote">“Kalanit was great! We'll certainly be adding her to our favorites and using again in the future. She diagnosed and fixed the issue in a surprisingly short amount of time.”</div>
+            </div>
+          </article>
+
+          <article class="mini-review">
+            <div class="review-card">
+              <div class="review-date">Dec 10, 2025</div>
+              <div class="review-service">Electrical Help</div>
+              <div class="review-name">Steven P.</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-quote">“I wanted to hire someone I could trust to have the skills to do a small job that was still important, and I found that person in Kalanit. She inspired confidence as soon as she walked in the door. Highly recommended.”</div>
+            </div>
+          </article>
+
+          <article class="mini-review">
+            <div class="review-card">
+              <div class="review-date">Jun 1, 2025</div>
+              <div class="review-service">Smart Home Installation</div>
+              <div class="review-name">Alicia M.</div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-quote">“It was awesome to work with Kalanit. She is extremely knowledgeable, flexible, and professional. She is definitely on my shortlist of home pros to hire again.”</div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="hassan-sell">
+        <div class="hassan-sell-inner">
+          <div class="label">Baltimore section</div>
+          <h2 style="margin-top:10px;">Baltimore homeowners, this is your guy</h2>
+          <p class="section-intro" style="margin-top:12px; max-width:780px;">
+            If you're in Baltimore and need real help, not guesswork, Hassan is the one to call. He brings hands-on experience, a problem-solving mindset, and the kind of work ethic you don’t have to babysit.
+          </p>
+          <p class="hero-copy-strong" style="margin-top:12px;">If you're in Baltimore, you don’t need to keep searching. Start here.</p>
+        </div>
+
+        <div class="sell-grid">
+          <div class="sell-card">
+            <div class="sell-card-title">Why Hassan gets booked</div>
+            <div class="sell-card-copy">Hassan is a U.S. Air Force veteran with over 20 years of hands-on experience across electrical, plumbing, carpentry, flooring, and general home repair.</div>
+          </div>
+          <div class="sell-card">
+            <div class="sell-card-title">What to expect</div>
+            <div class="sell-card-copy">Clear communication, showing up on time, and getting straight to the problem. Whether it’s a small fix or a multi-part job, he focuses on getting it done right without wasting your time.</div>
+          </div>
+          <div class="sell-card">
+            <div class="sell-card-title">Perfect for</div>
+            <div class="sell-card-copy">Electrical work, mounting, repairs, punch lists, flooring, carpentry, and jobs where real hands-on experience matters more than talk.</div>
+          </div>
+        </div>
+
+        <div class="cta-row" style="justify-content:flex-start; margin-top:24px;">
+          <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'hassan_sell_text'});}">Text for Baltimore jobs</a>
+          <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'hassan_sell_tr'});}">Book Hassan on TaskRabbit</a>
+        </div>
+      </div>
+
+      <div class="dual-cta">
+        <p class="dual-cta-text">Need help now? Text us a few photos and we’ll tell you exactly what to do next. Prefer to book through TaskRabbit instead? That option is here too. Choose Micki for Memphis and Hassan for Baltimore.</p>
+        <div class="cta-row">
+          <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'team_page_middle_text'});}">Text us directly</a>
+          <a href="https://tr.co/kalanit-c?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_middle_kalanit'});}">View Micki on TaskRabbit</a>
+          <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_middle_hassan'});}">View Hassan on TaskRabbit</a>
+        </div>
+      </div>
+
+      <div class="footer-cta">
+        <div class="footer-grid">
+          <div>
+            <h2>Need help with a repair, install, or punch list?</h2>
+            <div class="footer-copy">Text us a few photos and we’ll point you to the best next step. Memphis customers should start with Micki. Baltimore customers should start with Hassan. If you’d rather book through TaskRabbit, both profiles are linked right here.</div>
+          </div>
+          <div class="footer-actions">
+            <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'team_page_footer_text'});}">Text us now</a>
+            <a href="https://tr.co/kalanit-c?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_footer_kalanit'});}">Book Micki on TaskRabbit</a>
+            <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_footer_hassan'});}">Book Hassan on TaskRabbit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
