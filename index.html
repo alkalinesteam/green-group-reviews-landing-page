@@ -1,13 +1,33 @@
-<!-- Google tag (gtag.js) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Green Group | Reviews</title>
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z6JM72E55B"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-Z6JM72E55B');
+
+  function trackCTA(eventName, label) {
+    if (window.gtag) {
+      gtag('event', eventName, {
+        event_category: 'CTA',
+        event_label: label
+      });
+    }
+  }
 </script>
+
 <style>
+body {
+  margin: 0;
+}
+
 .gg-team-page {
   --bg: #fafaf9;
   --surface: #ffffff;
@@ -19,7 +39,6 @@
   --green-soft: #ecfdf5;
   --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.08);
-  --radius-lg: 20px;
   --radius-xl: 28px;
   --max: 1180px;
   background: var(--bg);
@@ -119,7 +138,7 @@
 
 .gg-team-page .stat-pill {
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 999px;
   padding: 10px 14px;
   font-size: 13px;
@@ -380,7 +399,6 @@
   padding: 18px;
 }
 
-/* Hassan section, softened so it reads as part of the page, not a boxed widget */
 .gg-team-page .hassan-sell {
   margin-top: 56px;
   padding: 48px 0 8px;
@@ -451,7 +469,7 @@
   border-radius: 30px;
   background: var(--green-dark);
   color: #ffffff;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 .gg-team-page .footer-cta h2 {
@@ -486,7 +504,7 @@
 .gg-team-page .footer-cta .btn-secondary {
   background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 @media (max-width: 1024px) {
@@ -532,7 +550,9 @@
   }
 }
 </style>
+</head>
 
+<body>
 <div class="gg-team-page">
   <section class="hero">
     <div class="container hero-inner">
@@ -568,8 +588,8 @@
                 <div class="member-location">Memphis</div>
                 <div class="member-copy">Repairs, installs, problem-solving jobs, and direct help for Memphis homeowners who want clear communication and solid work.</div>
                 <div class="button-stack">
-                  <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'team_page_kalanit_text'});}">Text Micki</a>
-                  <a href="https://tr.co/kalanit-c?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_kalanit_tr'});}">Book Kalanit on TaskRabbit</a>
+                  <a href="sms:4432963062" class="btn btn-primary" onclick="trackCTA('sms_click','hero_micki_sms');">Text Micki</a>
+                  <a href="https://tr.co/kalanit-c?utm_source=reviews_page&utm_medium=website&utm_campaign=taskrabbit&utm_content=hero_micki" target="_blank" rel="noopener" class="btn btn-secondary" onclick="trackCTA('taskrabbit_click','hero_micki_taskrabbit');">Book Kalanit on TaskRabbit</a>
                 </div>
               </div>
             </div>
@@ -581,8 +601,8 @@
                 <div class="member-location">Baltimore</div>
                 <div class="member-copy">Baltimore field help for homeowners who want a capable, no-nonsense pro for repairs, mounting, electrical, punch lists, and hands-on jobs.</div>
                 <div class="button-stack">
-                  <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'team_page_hassan_text'});}">Text for Baltimore jobs</a>
-                  <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_hassan_tr'});}">Book Hassan on TaskRabbit</a>
+                  <a href="sms:4432963062" class="btn btn-primary" onclick="trackCTA('sms_click','hero_hassan_sms');">Text for Baltimore jobs</a>
+                  <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=reviews_page&utm_medium=website&utm_campaign=taskrabbit&utm_content=hero_hassan" target="_blank" rel="noopener" class="btn btn-secondary" onclick="trackCTA('taskrabbit_click','hero_hassan_taskrabbit');">Book Hassan on TaskRabbit</a>
                 </div>
               </div>
             </div>
@@ -697,17 +717,17 @@
         </div>
 
         <div class="cta-row" style="justify-content:flex-start; margin-top:24px;">
-          <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'hassan_sell_text'});}">Text for Baltimore jobs</a>
-          <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'hassan_sell_tr'});}">Book Hassan on TaskRabbit</a>
+          <a href="sms:4432963062" class="btn btn-primary" onclick="trackCTA('sms_click','hassan_section_sms');">Text for Baltimore jobs</a>
+          <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=reviews_page&utm_medium=website&utm_campaign=taskrabbit&utm_content=hassan_section" target="_blank" rel="noopener" class="btn btn-secondary" onclick="trackCTA('taskrabbit_click','hassan_section_taskrabbit');">Book Hassan on TaskRabbit</a>
         </div>
       </div>
 
       <div class="dual-cta">
         <p class="dual-cta-text">Need help now? Text us a few photos and we’ll tell you exactly what to do next. Prefer to book through TaskRabbit instead? That option is here too. Choose Micki for Memphis and Hassan for Baltimore.</p>
         <div class="cta-row">
-          <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'team_page_middle_text'});}">Text us directly</a>
-          <a href="https://tr.co/kalanit-c?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_middle_kalanit'});}">View Micki on TaskRabbit</a>
-          <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_middle_hassan'});}">View Hassan on TaskRabbit</a>
+          <a href="sms:4432963062" class="btn btn-primary" onclick="trackCTA('sms_click','middle_sms');">Text us directly</a>
+          <a href="https://tr.co/kalanit-c?utm_source=reviews_page&utm_medium=website&utm_campaign=taskrabbit&utm_content=middle_micki" target="_blank" rel="noopener" class="btn btn-secondary" onclick="trackCTA('taskrabbit_click','middle_micki_taskrabbit');">View Micki on TaskRabbit</a>
+          <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=reviews_page&utm_medium=website&utm_campaign=taskrabbit&utm_content=middle_hassan" target="_blank" rel="noopener" class="btn btn-secondary" onclick="trackCTA('taskrabbit_click','middle_hassan_taskrabbit');">View Hassan on TaskRabbit</a>
         </div>
       </div>
 
@@ -718,12 +738,14 @@
             <div class="footer-copy">Text us a few photos and we’ll point you to the best next step. Memphis customers should start with Micki. Baltimore customers should start with Hassan. If you’d rather book through TaskRabbit, both profiles are linked right here.</div>
           </div>
           <div class="footer-actions">
-            <a href="sms:4432963062" class="btn btn-primary" onclick="if(window.gtag){gtag('event','text_click',{'event_category':'CTA','event_label':'team_page_footer_text'});}">Text us now</a>
-            <a href="https://tr.co/kalanit-c?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_footer_kalanit'});}">Book Micki on TaskRabbit</a>
-            <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=team_page&utm_medium=website&utm_campaign=taskrabbit" target="_blank" rel="noopener" class="btn btn-secondary" onclick="if(window.gtag){gtag('event','taskrabbit_click',{'event_category':'CTA','event_label':'team_page_footer_hassan'});}">Book Hassan on TaskRabbit</a>
+            <a href="sms:4432963062" class="btn btn-primary" onclick="trackCTA('sms_click','footer_sms');">Text us now</a>
+            <a href="https://tr.co/kalanit-c?utm_source=reviews_page&utm_medium=website&utm_campaign=taskrabbit&utm_content=footer_micki" target="_blank" rel="noopener" class="btn btn-secondary" onclick="trackCTA('taskrabbit_click','footer_micki_taskrabbit');">Book Micki on TaskRabbit</a>
+            <a href="https://www.taskrabbit.com/profile/hassan-m--34?utm_source=reviews_page&utm_medium=website&utm_campaign=taskrabbit&utm_content=footer_hassan" target="_blank" rel="noopener" class="btn btn-secondary" onclick="trackCTA('taskrabbit_click','footer_hassan_taskrabbit');">Book Hassan on TaskRabbit</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 </div>
+</body>
+</html>
